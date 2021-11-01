@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Song List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="songs.json"></script>
+
+</head>
+<body>
+<table class="table">
+    <tr>
+        <th>Genre</th>
+        <th>Name</th>
+        <th>Artist</th>
+        <th>Year</th>
+    </tr>
+    <tbody id="myTable"></tbody>
+</table>
+
+
+<script type="text/javascript">
+		
+		var song_arr = JSON.parse(songs);
+		
+		function makeTable(arr){
+		var table = document.getElementById('myTable')
+
+			for (var i = 0; i < arr.length; i++){
+				var row = `<tr>
+					<td>${arr[i].genre}</td>
+					<td>${arr[i].name}</td>
+					<td>${arr[i].artist}</td>
+					<td>${arr[i].year}</td>
+				</tr>`
+				table.innerHTML += row;
+			}
+		}
+
+		makeTable(song_arr);
+
+
+	
+
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+{ "songs": [{
+		"genre": "Hip Hop",
+		"name": "Fair Trade",
+		"artist": "Drake and Travis Scott",
+		"year": "Released 2021"
+	},
+	{
+		"genre": "Jazz",
+		"name": "The Way You Look Tonight",
+		"artist": "Frank Sinatra",
+		"year": "Released 1961"
+	},
+	{
+		"genre": "Rock",
+		"name": "Viva La Vida",
+		"artist": "Coldplay",
+		"year": "Released 2008"
+	},
+	{
+		"genre": "Hip Hop",
+		"name": "Earfquake",
+		"artist": "Tyler, the Creator",
+		"year": "Released 2019"
+	},
+	{
+		"genre": "Rock",
+		"name": "Turn to Stone",
+		"artist": "Electric Light Orchestra",
+		"year": "Released 1972"
+	},
+	{
+		"genre": "Hip Hop",
+		"name": "Moon",
+		"artist": "Kanye West",
+		"year": "Released 2021"
+	},
+	{
+		"genre": "Jazz",
+		"name": "Misty",
+		"artist": "Erroll Garner",
+		"year": "Released 1959"
+	},
+	{
+		"genre": "Rock",
+		"name": "Rock With You",
+		"artist": "Michael Jackson",
+		"year": "Released 1979"
+	},
+	{
+		"genre": "Hip Hop",
+		"name": "Empire State of Mind",
+		"artist": "Alicia Keys",
+		"year": "Released 2009"
+	},
+	{
+		"genre": "Jazz",
+		"name": "Take the 'A' Train",
+		"artist": "Duke Ellington",
+		"year": "Released 1941"
+	},
+	{
+		"genre": "Rock",
+		"name": "Dreams",
+		"artist": "Fleetwood Mac",
+		"year": "Released 1977"
+	},
+	{
+		"genre": "Hip Hop",
+		"name": "Nights",
+		"artist": "Frank Ocean",
+		"year": "Released 2016"
+	}
+
+]}
