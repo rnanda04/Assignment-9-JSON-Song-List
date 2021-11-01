@@ -3,42 +3,58 @@
 <head>
 	<title>JSON Song List</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script type="text/javascript" src="songs.json"></script>
+	<script language="javascript" type="text/javascript" src="songs.json"></script>
+
 
 </head>
 <body>
-<table class="table">
-    <tr>
-        <th>Genre</th>
-        <th>Name</th>
-        <th>Artist</th>
-        <th>Year</th>
-    </tr>
-    <tbody id="myTable"></tbody>
-</table>
+<h1>JSON Song Data</h1>
+	<select name="genres" id="genres">
+		<option value="hiphop">Hip Hop</option>
+		<option value="rock">Rock</option>
+		<option value="jazz">Jazz</option>
+		<option value="pop">Pop</option>
+	</select>
+	<button id="checker">Choose Genre</button>
+
+
+
+<div id="songs"></div>
 
 
 <script type="text/javascript">
 		
-		var song_arr = JSON.parse(songs);
+	arr = JSON.stringify(songs); 
+	song = JSON.parse(arr); 
+	document.write(arr + "<br>" + "<br>");
 		
-		function makeTable(arr){
-		var table = document.getElementById('myTable')
+	for (var i = 0; i < 12; i++) {
+		document.getElementById("songs").innerHTML += "Name: " + song.name + "<br>"
+		document.getElementById("songs").innerHTML += "Artist: " + song.artist + "<br>";
+		document.getElementById("songs").innerHTML += "Genre: " + song.genre + "<br>"; 
+		document.getElementById("songs").innerHTML += "Year: " + song.year + "<br>" + "<br>";
+	}
 
-			for (var i = 0; i < arr.length; i++){
-				var row = `<tr>
-					<td>${arr[i].genre}</td>
-					<td>${arr[i].name}</td>
-					<td>${arr[i].artist}</td>
-					<td>${arr[i].year}</td>
-				</tr>`
-				table.innerHTML += row;
-			}
-		}
+	$(document).ready(function() {
+		$('button').click(function() {
+                var genre;
+                if ($('select[name="genres"] option:selected').index() == 0) {
+                    genre = "hip";
+                } else if ($('select[name="genres"] option:selected').index() == 1) {
+                    genre = "rock"
+                } else if ($('select[name="genres"] option:selected').index() == 2) {
+                    genre = "jazz"
+                } else if ($('select[name="genres"] option:selected').index() == 3) {
+                    genre = "pop"
+                }
 
-		makeTable(song_arr);
-
-
+                for (var i = 0; i < 12; i++) {
+                    if (song[i].genre[0] == genre || song[i].genre[1] == genre) {
+                        document.getElementById("selected").innerHTML += song[i].name + "<br>";
+                    }
+                }
+		})
+	})
 	
 
 </script>
