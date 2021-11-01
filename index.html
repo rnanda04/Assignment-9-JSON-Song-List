@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON Song List</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script language="javascript" type="text/javascript" src="songs.json"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+<h1>Assignment 9: JSON Song Data</h1>
+<img src="tyler.png">
+<div class="container">
+	<select id="genre_selector" onchange="select(this)">
+		<option value=""></option>
+		<option value="hiphop">Hip Hop</option>
+		<option value="rock">Rock</option>
+		<option value="jazz">Jazz</option>
+		<option value="pop">Pop</option>
+		<option value="rb">R&B</option>
+	</select>
+</div>
+
+
+<div id="new_songs"></div>
+<div id="songs"></div>
+
+
+<script type="text/javascript">
+	
+	var data = JSON.stringify(songs);
+	data = JSON.parse(data);
+
+	document.getElementById("songs").innerHTML += "All Songs: " + "<br><br>";
+	for (var i = 0; i < data.length; i++) {
+		var song = data[i];
+		document.getElementById("songs").innerHTML += "Name: " + song.name + "<br>"
+		document.getElementById("songs").innerHTML += "Artist(s): " + song.artist + "<br>";
+		document.getElementById("songs").innerHTML += "Year: " + song.year + "<br>";
+		document.getElementById("songs").innerHTML += "Genre(s): "; 
+		for (var j = 0; j < song.genre.length; j++) {
+			document.getElementById("songs").innerHTML += song.genre[j] + " "; 
+		}
+		document.getElementById("songs").innerHTML += "<br><br>";
+		
+	}
+
+	function select(genre) {
+		var input = document.getElementById('new_songs');
+		document.getElementById("songs").innerHTML = "";
+		var selected_genre = genre.options[genre.selectedIndex].text;
+		new_songs.innerHTML =  "Selected Genre: " + selected_genre + "<br>" + "<br>";
+		for (var i = 0; i < data.length; i++) {
+			var song = data[i];
+			for (var j = 0; j < song.genre.length; j++) {
+				if (song.genre[j] == selected_genre) {
+				document.getElementById("songs").innerHTML += "Name: " + song.name + "<br>";
+				document.getElementById("songs").innerHTML += "Artist: " + song.artist + "<br>";
+				document.getElementById("songs").innerHTML += "Genre: " + selected_genre + "<br>"; 
+				document.getElementById("songs").innerHTML += "Year: " + song.year + "<br>" + "<br>";
+			}
+			}
+			
+		}
+	}
+	
+
+</script>
+</body>
+</html>
